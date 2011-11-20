@@ -1,0 +1,175 @@
+<html>
+
+  <head>
+
+		<title>Stock Ticker using Ajax</title>		
+
+		
+
+		<!-- Paul.Hughes Defining javascript -->
+
+
+
+		<script type="text/javascript" src="jquery-1.6.4.js"></script>
+
+		<script>
+
+		
+
+		<!-- Paul.Hughes Directing to php file -->
+
+        var stockURL = "stock-ticker.php?tickers=";
+
+
+
+        var stockTickers = new Array();
+
+
+
+        $(document).ready(function(){
+
+	
+
+    	$("#addStockBtn").click(function(e){
+
+	
+
+		var stock = $("#stock").val();
+
+		
+
+		$.get(stockURL + stock, function(data){
+
+			
+
+			var linesOfData = data.split('\n');
+
+			
+
+			$("#stocks").empty();					
+
+			$("#stocks").append(""
+
+				+ "Stock"
+
+				+ "Value"
+
+				+ "Change"
+
+				+ "");
+
+			
+
+			for(i=0; i < linesOfData.length-1; i++)
+
+			{
+
+				var lineOfData = linesOfData[i].split(',');
+
+				$("#stocks").append("" 
+
+					+ String(lineOfData[0]).replace(/\"/g, '') 
+
+					+ "" + lineOfData[1] 
+
+					+ "" + lineOfData[2] 
+
+					+ "");
+
+			}				
+
+		});
+
+	});
+
+});
+
+
+
+</script>
+
+		
+
+				<!-- Add design css code here -->
+
+
+
+		
+
+		<style type="text/css">
+
+
+
+#stocks {
+
+	width: 200px;
+
+	padding-left:50px;
+
+
+
+}
+
+#stocks thead {
+
+	font-weight: bold;
+
+}
+
+
+
+#add-stock {
+
+	margin-bottom: 10px;
+
+	background-color: #000000;
+
+	padding: 10px;
+
+	padding-left:50px;
+
+}
+
+
+
+</style>
+
+		
+
+	</head>
+
+	<body>
+
+	
+
+	<table id="stocks">
+
+	<tr>
+
+		<td colspan="3">Enter a ticker above to begin searching.</td>
+
+	</tr>
+
+</table>
+
+	
+
+	
+
+	<form id="add-stock">
+
+	<input type="text" id="stock" name="stock" value="adbe,siri" size="40" />
+
+	<input type="button" value="Get Stock Data" id="addStockBtn" />
+
+</form>
+
+
+
+
+
+	
+
+	</body>
+
+</html>
