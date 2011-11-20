@@ -24,19 +24,16 @@
    
    $("#stocks").empty();     
    $("#stocks").append(""
-    + "Stock"
-    + "Value"
-    + "Change"
-    + "");
+       + "");
    
    for(i=0; i < linesOfData.length-1; i++)
    {
     var lineOfData = linesOfData[i].split(',');
     $("#stocks").append(""
      + String(lineOfData[0]).replace(/\"/g, '')
-     + "" + lineOfData[1]
-     + "" + lineOfData[2]
-     + "");
+     + "Company:" + lineOfData[1]
+     + "/Value:" + lineOfData[2]
+     + "/Change:");
    }    
   });
  });
