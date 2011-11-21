@@ -1,114 +1,333 @@
-<html>
- <head>
-  <title>Stock Ticker using Ajax</title>  
-  
-  <!-- Paul.Hughes Defining javascript -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--
+
+Design by Free CSS Templates
+
+http://www.freecsstemplates.org
+
+Released for free under a Creative Commons Attribution 2.5 License
+
+
+
+Name       : Highway   
+
+Description: A two-column, fixed-width design with dark color scheme.
+
+Version    : 1.0
+
+Released   : 20111016
+
+
+
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta name="keywords" content="" />
+
+<meta name="description" content="" />
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>Highway    by Free CSS Templates</title>
+
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+
+
+<!-- Paul.Hughes Defining javascript -->
+
+
 
   <script type="text/javascript" src="jquery-1.6.4.js"></script>
+
   <script>
+
   
+
   <!-- Paul.Hughes Directing to php file -->
+
         var stockURL = "stock-ticker.php?tickers=";
+
+
 
         var stockTickers = new Array();
 
+
+
         $(document).ready(function(){
+
  
+
      $("#addStockBtn").click(function(e){
+
  
+
   var stock = $("#stock").val();
+
   
+
   $.get(stockURL + stock, function(data){
+
    
+
    var linesOfData = data.split('\n');
+
    
+
    $("#stocks").empty();     
+
    $("#stocks").append(""
+
        + "");
+
    
+
    for(i=0; i < linesOfData.length-1; i++)
+
    {
+
     var lineOfData = linesOfData[i].split(',');
+
     $("#stocks").append("Stock Quote:"
+
      + String(lineOfData[0]).replace(/\"/g, '')
+
      + " - Value:" + lineOfData[1]
+
      + " - Change:" + lineOfData[2]
+
      + "");
+
    }    
+
   });
+
  });
+
 });
 
+
+
 </script>
-  
-    <!-- Add design css code here -->
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+ <div id="header-wrapper">
+
+		<div id="header">
+
+		<div id="logo">
+
+				<p>
+
+				Pauls Stock Ticker Hosted in the Clouds....
+
+				</p>
+
+			</div>
+
+			<div id="menu">
+
+				<ul>
+
+					
+
+				</ul>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- end #header -->
+
+	<div id="page">
+
+		<div id="page-bgtop">
+
+			<div id="page-bgbtm">
+
+				<div id="content">
+
+					<div class="post">
+
+						<h2 class="title"><a href="#">Step 1. Enter the stock ticker in the search box below </a></h2>
+
+						<div style="clear: both;">&nbsp;</div>
+
+						<div class="entry">
+
+							<p>
+
+							
+
+							<form id="add-stock">
+
+ 
+
+ 
 
   
-  <style type="text/css">
 
-#stocks {
- width: 500px;
- padding-left:0px;
- padding-top:20px;
- padding-bottom:30px;
- color: #ffffff;
+ 
 
-}
-#stocks thead {
- font-weight: bold;
-}
+ 
 
-#add-stock {
- width: 500px;
- height: 140px;
- margin-bottom: 10px;
- background-color: #000000;
- padding: 10px;
- padding-top:20px;
- padding-left:50px;
-}
-
-#title {
-    padding-left: 150px;
- padding-top:20px;
-}
-
-
-</style>
-  
- </head>
- <body>
- 
- <h2 id="title">Stock Ticker using AJAX</h2>
- 
- 
- 
- 
- 
- 
- <form id="add-stock">
- 
- 
-  <table id="stocks">
- <tr>
-  <td colspan="3">Enter a Stock Symbol below and click the Search button</td>
- </tr>
-</table>
- 
- 
  <input type="text" id="stock" name="stock" value="" size="50" />
- <input type="button" value="Search" id="addStockBtn" />
- 
- 
- 
- 
- 
- 
-</form>
 
  
 
-
  
- </body>
+
+ </form>
+
+							
+
+							
+
+							
+
+							
+
+							</p>
+
+						</div>
+
+					</div>
+
+					<div class="post">
+
+						<h2 class="title"><a href="#">TITLE</a></h2>
+
+						<div style="clear: both;">&nbsp;</div>
+
+						<div class="entry">
+
+							<p> 
+
+							
+
+							
+
+							<input type="button" value="Search" id="addStockBtn" />
+
+</p>
+
+						</div>
+
+					</div>
+
+					<div class="post">
+
+						<h2 class="title"><a href="#">TITLE</a></h2>
+
+						<div style="clear: both;">&nbsp;</div>
+
+						<div class="entry">
+
+							<p>
+
+							
+
+							
+
+							<table id="stocks">
+
+ <tr>
+
+  <td colspan="3"></td>
+
+ </tr>
+
+</table>
+
+
+
+
+
+
+
+</p>
+
+						</div>
+
+					</div>
+
+					<div style="clear: both;">&nbsp;</div>
+
+				</div>
+
+				<!-- end #content -->
+
+				<div id="sidebar">
+
+					<ul>
+
+						<li>
+
+							<div style="clear: both;">&nbsp;</div>
+
+						</li>
+
+						<li>
+
+							<h2>TRENDING TOPICS</h2>
+
+							<p>ADD MY TRENDING TOPICS HERE</p>
+
+						</li>
+
+						
+
+							
+
+						
+
+					</ul>
+
+				</div>
+
+				<!-- end #sidebar -->
+
+				<div style="clear: both;">&nbsp;</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- end #page -->
+
+</div>
+
+<div id="footer">
+
+	<p>Copyright (c) 2011 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+
+</div>
+
+<!-- end #footer -->
+
+</body>
+
 </html>
