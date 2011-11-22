@@ -536,9 +536,13 @@ a:hover {
 
 .post {
 
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 
-		background: #FFFFFF;
+	padding-top:5px;
+
+		background: #fff;
+
+		height: 130px;
 
 
 
@@ -547,8 +551,6 @@ a:hover {
 
 
 .post .title {
-
-	height: 41px;
 
 	padding: 7px 0px 10px 30px;
 
@@ -573,8 +575,6 @@ a:hover {
 
 
 .post .meta {
-
-	margin-bottom: 30px;
 
 	padding: 0px 30px 0px 30px;
 
@@ -617,10 +617,6 @@ a:hover {
 .post .entry {
 
 	padding: 0px 30px 20px 30px;
-
-	padding-bottom: 20px;
-
-	border-bottom: 1px solid #B3B3B3;
 
 	text-align: justify;
 
@@ -866,6 +862,14 @@ a:hover {
 
 }
 
+
+
+
+
+
+
+
+
 </style>
 
 
@@ -924,8 +928,6 @@ a:hover {
 
 						<h2 class="title"><a href="#">Step 1. Enter the stock ticker in the search box below </a></h2>
 
-						<div style="clear: both;">&nbsp;</div>
-
 						<div class="entry">
 
 							<p>
@@ -940,11 +942,15 @@ a:hover {
 
   
 
- 
+ <p>
 
  
 
- <input type="text" id="stock" name="stock" value="" size="50" />
+ <input type="text" id="stock" name="stock" value="appl" size="92" font="20" background="#bbbbbb"  />
+
+ 
+
+ you can enter multiples also</p>
 
  
 
@@ -968,7 +974,7 @@ a:hover {
 
 					<div class="post">
 
-						<h2 class="title"><a href="#">TITLE</a></h2>
+						<h2 class="title"><a href="#">Step 2. Click this extremly large button below</a></h2>
 
 						<div style="clear: both;">&nbsp;</div>
 
@@ -976,13 +982,9 @@ a:hover {
 
 							<p> 
 
-							
+							<input type="button" value="Click Here to find out how well or how bad your latest invesment is doing!" id="addStockBtn"  />
 
-							
-
-							<input type="button" value="Search" id="addStockBtn" />
-
-</p>
+							<--click here</p>
 
 						</div>
 
@@ -990,23 +992,17 @@ a:hover {
 
 					<div class="post">
 
-						<h2 class="title"><a href="#">TITLE</a></h2>
-
-						<div style="clear: both;">&nbsp;</div>
+						<h2 class="title"><a href="#">Step 3.Your results,Are you a billionaire or have you gone bust?</a></h2>
 
 						<div class="entry">
 
 							<p>
 
-							
-
-							
-
 							<table id="stocks">
 
  <tr>
 
-  <td colspan="3"></td>
+  <td colspan="3" color="blue">Waiting.....</td>
 
  </tr>
 
